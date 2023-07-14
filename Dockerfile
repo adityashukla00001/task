@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image
-FROM node:12.22.9
+FROM node:16
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -8,8 +8,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install application dependencies
-RUN curl -v https://registry.npmjs.com/
-RUN npm i
+#RUN curl -v https://registry.npmjs.com/
+RUN npm install
 
 # Copy the application files to the working directory
 COPY . .
